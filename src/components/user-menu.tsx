@@ -80,7 +80,7 @@ export function UserMenu() {
           >
             提示词管理
           </DropdownMenuItem>
-          <DropdownMenuSeparator />
+          {/* <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
             <a
               href="https://github.com/weaigc/bingo/"
@@ -92,8 +92,8 @@ export function UserMenu() {
               <IconGitHub />
               <IconExternalLink className="w-3 h-3 ml-auto" />
             </a>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
+          </DropdownMenuItem> */}
+          {/* <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
             <a
               href="https://huggingface.co/login?next=%2Fspaces%2Fhf4all%2Fbingo%3Fduplicate%3Dtrue%26visibility%3Dpublic"
@@ -104,22 +104,22 @@ export function UserMenu() {
               复制站点
               <IconExternalLink className="w-3 h-3 ml-auto" />
             </a>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
+          </DropdownMenuItem> */}
+          {/* <DropdownMenuSeparator />
           <DropdownMenuItem className="flex-col items-start">
             <div className="font-medium">版本信息 {pkg.version}</div>
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
           <DropdownMenuSeparator />
           {installPrompt && <DropdownMenuItem className="flex-col items-start">
-            <div className="font-medium" onClick={() => installPrompt.prompt?.()}>安装 Bing 到桌面</div>
+            <div className="font-medium" onClick={() => installPrompt.prompt?.()}>安装 到桌面</div>
           </DropdownMenuItem>}
-          <DropdownMenuSeparator />
+          {/* <DropdownMenuSeparator />
           <DropdownMenuItem className="flex-col items-start">
             <div className="font-medium">站点域名</div>
             <div onClick={() => copyToClipboard(host)} className="flex gap-1 text-xs text-zinc-500 cursor-pointer">
               {host} <IconCopy />
             </div>
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

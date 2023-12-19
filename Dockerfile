@@ -22,13 +22,13 @@ WORKDIR $HOME/app
 COPY --chown=user . $HOME/app/
 
 RUN if [ ! -f ".next/routes-manifest.json" ]; then \
-  npm install && npm run build; \
+  npm install && npm i sharp && npm run build; \
   fi
 
 RUN rm -rf src
 
-ENV PORT 7860
+ENV PORT 80
 
-EXPOSE 7860
+EXPOSE 80
 
 CMD npm start

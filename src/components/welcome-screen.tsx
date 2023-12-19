@@ -1,34 +1,66 @@
-import { BingReturnType } from '@/lib/hooks/use-bing'
+import { BingReturnType } from "@/lib/hooks/use-bing";
 
 const exampleMessages = [
   {
-    heading: '🧐 提出复杂问题',
-    message: `我可以为我挑剔的只吃橙色食物的孩子做什么饭?`
+    heading: "💭 ",
+    message: `无限对话`,
   },
   {
-    heading: '🙌 获取更好的答案',
-    message: '销量最高的 3 种宠物吸尘器有哪些优点和缺点?'
+    heading: "🤖 ",
+    message: `支持GPT4`,
   },
   {
-    heading: '🎨 获得创意灵感',
-    message: `以海盗的口吻写一首关于外太空鳄鱼的俳句`
-  }
-]
+    heading: "📱 《知之AI》APP",
+    message: "点击安装",
+  },
+  {
+    heading: "🎨 ",
+    message: `支持Dalle3绘画`,
+  },
+  {
+    heading: "🚌 ",
+    message: `免魔法`,
+  },
+];
 
-export function WelcomeScreen({ setInput }: Pick<BingReturnType, 'setInput'>) {
+export function WelcomeScreen({ setInput }: Pick<BingReturnType, "setInput">) {
   return (
-    <div className="welcome-container flex">
-      {exampleMessages.map(example => (
-        <button key={example.heading} className="welcome-item w-4/5 sm:w-[240px]" type="button" onClick={() => setInput(example.message)}>
-          <div className="item-title">{example.heading}</div>
-          <div className="item-content">
-            <div className="item-body">
-              <div className="item-header"></div>
-              <div>&ldquo;{example.message}&rdquo;</div>
+    <div>
+      {/* <div className="welcome-container flex">
+      <button
+            key='zhizhiai'
+            className="welcome-item w-4/5 sm:w-[240px]"
+            type="button"
+            onClick={() => setInput('安装 《知之AI》')}
+          >
+            <div className="item-title">安装 《知之AI》</div>
+            <div className="item-content">
+              <div className="item-body">
+                <div className="item-header"></div>
+                <div>免魔法国内支持GPT4,DallE3,等强大的AI功能</div>
+              </div>
             </div>
-          </div>
-        </button>
-      ))}
+          </button>
+      </div> */}
+      <div className="welcome-container flex">
+        {exampleMessages.map((example) => (
+            <a
+              key={example.heading}
+              href="https://zhizhiai.njstack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-between gap-2 cursor-pointer welcome-item w-4/5 sm:w-[240px]"
+            >
+            <div className="item-title">{example.heading}</div>
+            <div className="item-content">
+              <div className="item-body">
+                <div className="item-header"></div>
+                <div>&ldquo;{example.message}&rdquo;</div>
+              </div>
+            </div>
+            </a>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
